@@ -1,4 +1,3 @@
-Create file resources/js/Pages/UserAccount/Create.vue:
 <template>
     <form @submit.prevent="register">
       <div class="w-1/2 mx-auto">
@@ -51,13 +50,21 @@ Create file resources/js/Pages/UserAccount/Create.vue:
           >
             Create Account
           </button>
+          <div class="mt-2 text-center">
+          <Link
+            :href="route('login')"
+            class="text-sm text-gray-500"
+          >
+            Already have an account? Click here
+          </Link>
+        </div>
         </div>
       </div>
     </form>
   </template>
  
   <script setup>
-  import { useForm } from '@inertiajs/vue3'
+  import { useForm, Link } from '@inertiajs/vue3'
   const form = useForm({
     name: null,
     email: null,
